@@ -1,0 +1,137 @@
+/* Базовые стили (адаптируй под макет) */
+:root{
+    --bg: #f7f7f7;
+    --card-bg: #ffffff;
+    --accent: #1976d2;
+    --text: #222;
+}
+
+*{box-sizing:border-box}
+body{
+    margin:0;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    padding: 32px;
+}
+
+.container{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Search */
+.search-section{
+    display:flex;
+    justify-content:center;
+    margin-bottom: 20px;
+}
+
+.search-form{
+    display:flex;
+    gap:10px;
+    width:100%;
+    max-width:700px;
+}
+
+.search-form input[type="text"], .search-form input[type="search"]{
+    flex:1;
+    padding:10px 14px;
+    border-radius:6px;
+    border:1px solid #d0d0d0;
+    font-size:16px;
+}
+
+.search-form button{
+    padding:10px 16px;
+    background: var(--accent);
+    border:none;
+    color:white;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+/* Gallery grid */
+.gallery{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap:20px;
+}
+
+/* Card */
+.photo-card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    overflow:hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    display:flex;
+    flex-direction:column;
+}
+
+.photo-card a{
+    display:block;
+    text-decoration:none;
+    color:inherit;
+}
+
+.photo-card img{
+    display:block;
+    width:100%;
+    height:170px;
+    object-fit:cover;
+}
+
+/* info */
+.info{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    padding:12px;
+    font-size:13px;
+    color:#555;
+}
+
+.info-item{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.info-item b{
+    font-weight:700;
+    color:#222;
+}
+
+/* Loader overlay */
+.loader-overlay{
+    position: fixed;
+    inset: 0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background: rgba(255,255,255,0.6);
+    z-index: 3000;
+}
+
+/* hide class */
+.is-hidden{ display:none; }
+
+/* loaders.css uses classnames; we use one loader style wrapper */
+.loader-inner{
+    width: 80px;
+    height: 80px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* tiny responsive tweaks */
+@media (max-width:600px){
+    .photo-card img{ height:140px; }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "WEB2025 - Lab_8",
+  "version": "1.0.0",
+  "description": "",
+  "main": "JS/gallery.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true,
+  "dependencies": {
+    "izitoast": "^1.4.0",
+    "loaders.css": "^0.1.2",
+    "simplelightbox": "^2.14.3"
+  }
+}

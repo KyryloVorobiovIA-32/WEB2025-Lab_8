@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <!-- iziToast CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast/dist/css/iziToast.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            background: #f2f2f2;
+        }
+
+        .timer {
+            display: flex;
+            gap: 25px;
+        }
+
+        .field {
+            text-align: center;
+        }
+
+        .value {
+            font-size: 40px;
+            font-weight: bold;
+            display: block;
+        }
+
+        .label {
+            font-size: 14px;
+            color: #555;
+        }
+
+        button[disabled] {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<input type="text" id="datetime-picker" />
+<button type="button" data-start disabled>Start</button>
+
+<div class="timer">
+    <div class="field">
+        <span class="value" data-days>00</span>
+        <span class="label">Days</span>
+    </div>
+    <div class="field">
+        <span class="value" data-hours>00</span>
+        <span class="label">Hours</span>
+    </div>
+    <div class="field">
+        <span class="value" data-minutes>00</span>
+        <span class="label">Minutes</span>
+    </div>
+    <div class="field">
+        <span class="value" data-seconds>00</span>
+        <span class="label">Seconds</span>
+    </div>
+</div>
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/izitoast/dist/js/iziToast.min.js"></script>
+<script src="../JS/1-timer.js"></script>
+
+</body>
+</html>
