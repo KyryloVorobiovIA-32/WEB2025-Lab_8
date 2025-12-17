@@ -6,13 +6,70 @@
     <title>Галерея</title>
 
     <link rel="stylesheet" href="CSS/style.css" />
-
-    <!-- Підключаємо basicLightbox -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.css">
+
+    <style>
+        /* Скидаємо відступи body, щоб меню було приклеєне до країв */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        .tasks-nav {
+            display: flex;
+            justify-content: center; /* Центрування кнопок по горизонталі */
+            gap: 10px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Легка тінь для краси */
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 20px; /* Трохи збільшив кнопки */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+
+        .nav-link.active {
+            background-color: #002060;
+            color: white;
+            border-color: #002060;
+            pointer-events: none;
+        }
+
+        /* Додатковий контейнер для контенту, щоб він не прилипав до країв після reset body */
+        .content-container {
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
 
-<ul class="gallery"></ul>
+<nav class="tasks-nav">
+    <a href="index.html" class="nav-link active">Завдання 1</a>
+    <a href="HTML/2-form.html" class="nav-link">Завдання 2 (Form)</a>
+    <a href="HTML/1-timer.html" class="nav-link">Завдання 3 (Timer)</a>
+    <a href="HTML/2-snackbar.html" class="nav-link">Завдання 4 (Snackbar)</a>
+</nav>
+
+<div class="content-container">
+    <ul class="gallery"></ul>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js"></script>
 <script src="JS/gallery.js"></script>

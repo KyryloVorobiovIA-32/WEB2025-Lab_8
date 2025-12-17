@@ -1,4 +1,4 @@
-// 1. Глобальний об’єкт formData
+// Глобальний об’єкт formData
 let formData = {
     email: "",
     message: "",
@@ -9,7 +9,7 @@ const form = document.querySelector(".feedback-form");
 const emailInput = form.elements.email;
 const messageInput = form.elements.message;
 
-// 2. Відновлення даних із localStorage при завантаженні
+// Відновлення даних із localStorage при завантаженні
 const savedData = localStorage.getItem(STORAGE_KEY);
 
 if (savedData) {
@@ -26,7 +26,7 @@ if (savedData) {
     }
 }
 
-// 3. Делегування події "input"
+// Делегування події "input"
 form.addEventListener("input", (event) => {
     const field = event.target.name;
     const value = event.target.value.trim();
@@ -36,7 +36,7 @@ form.addEventListener("input", (event) => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 });
 
-// 4. Сабміт форми
+// Сабміт форми
 form.addEventListener("submit", (event) => {
     event.preventDefault();
 

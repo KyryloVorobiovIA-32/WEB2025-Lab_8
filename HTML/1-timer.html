@@ -5,21 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timer</title>
 
-    <!-- Flatpickr CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-
-    <!-- iziToast CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast/dist/css/iziToast.min.css">
 
     <style>
         body {
             font-family: Arial, sans-serif;
-            padding: 40px;
+            margin: 0;
+            padding: 0;
+            background: #f2f2f2;
+        }
+
+        /* Навігація */
+        .tasks-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #ddd;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+
+        .nav-link.active {
+            background-color: #002060;
+            color: white;
+            border-color: #002060;
+            pointer-events: none;
+        }
+
+        /* Контейнер для таймера */
+        .container {
             display: flex;
             flex-direction: column;
             align-items: center;
+            padding-top: 40px;
             gap: 30px;
-            background: #f2f2f2;
         }
 
         .timer {
@@ -42,39 +81,67 @@
             color: #555;
         }
 
+        /* Стилі інпуту і кнопки */
+        #datetime-picker {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button[data-start] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
         button[disabled] {
             opacity: 0.5;
             cursor: not-allowed;
+            background-color: #ccc;
         }
     </style>
-
 </head>
 
 <body>
 
-<input type="text" id="datetime-picker" />
-<button type="button" data-start disabled>Start</button>
+<nav class="tasks-nav">
+    <a href="../index.html" class="nav-link">Завдання 1</a>
+    <a href="2-form.html" class="nav-link">Завдання 2 (Form)</a>
+    <a href="1-timer.html" class="nav-link active">Завдання 3 (Timer)</a>
+    <a href="2-snackbar.html" class="nav-link">Завдання 4 (Snackbar)</a>
+</nav>
 
-<div class="timer">
-    <div class="field">
-        <span class="value" data-days>00</span>
-        <span class="label">Days</span>
+<div class="container">
+    <div>
+        <input type="text" id="datetime-picker" />
+        <button type="button" data-start disabled>Start</button>
     </div>
-    <div class="field">
-        <span class="value" data-hours>00</span>
-        <span class="label">Hours</span>
-    </div>
-    <div class="field">
-        <span class="value" data-minutes>00</span>
-        <span class="label">Minutes</span>
-    </div>
-    <div class="field">
-        <span class="value" data-seconds>00</span>
-        <span class="label">Seconds</span>
+
+    <div class="timer">
+        <div class="field">
+            <span class="value" data-days>00</span>
+            <span class="label">Days</span>
+        </div>
+        <div class="field">
+            <span class="value" data-hours>00</span>
+            <span class="label">Hours</span>
+        </div>
+        <div class="field">
+            <span class="value" data-minutes>00</span>
+            <span class="label">Minutes</span>
+        </div>
+        <div class="field">
+            <span class="value" data-seconds>00</span>
+            <span class="label">Seconds</span>
+        </div>
     </div>
 </div>
 
-<!-- JS -->
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="https://cdn.jsdelivr.net/npm/izitoast/dist/js/iziToast.min.js"></script>
 <script src="../JS/1-timer.js"></script>

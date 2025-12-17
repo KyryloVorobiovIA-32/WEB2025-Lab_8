@@ -16,7 +16,7 @@ const images = [
     },
 ];
 
-// 9. Створюємо розмітку
+// Створюємо розмітку
 const gallery = document.querySelector('.gallery');
 
 const markup = images
@@ -35,7 +35,7 @@ const markup = images
 
 gallery.innerHTML = markup;
 
-// 11. Делегування подій
+// Делегування подій
 gallery.addEventListener('click', (event) => {
     const clickedImg = event.target;
 
@@ -46,7 +46,7 @@ gallery.addEventListener('click', (event) => {
     // Показати посилання у консоль (вимога пункту 11)
     console.log(largeImg);
 
-    // 12. Модальне вікно
+    // Модальне вікно
     const instance = basicLightbox.create(`
       <img src="${largeImg}" width="900" height="600"  alt=""/>
   `);
